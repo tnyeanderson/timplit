@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -49,7 +50,17 @@ func readAll(f *os.File) []byte {
 	return b
 }
 
+// Arrays won't unmarshal properly. Wrap them in an object under the "items"
+// property.
+func wrapJsonArray(b []byte) []byte {
+	if bytes.HasPrefix(b, []byte("[")) {
+		return []byte(fmt.Sprintf(`{"items": %s}`, b))
+	}
+	return b
+}
+
 func parseJson(b []byte) (data map[string]interface{}) {
+	b = wrapJsonArray(b)
 	if err := json.Unmarshal(b, &data); err != nil {
 		panic(err)
 	}
