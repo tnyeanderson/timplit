@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Big Ben",
+		"location": {
+			"borough": "Westminster",
+			"region": "London",
+			"country": "England",
+			"planet": "Earth"
+		},
+		"types": ["building", "clock", "attraction"]
+	},
+	{
+		"name": "White House",
+		"location": {
+			"borough": "National Mall",
+			"region": "Washington D.C.",
+			"country": "USA",
+			"planet": "Earth"
+		},
+		"types": ["building", "residence", "attraction"]
+	}
+]

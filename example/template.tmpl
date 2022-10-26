@@ -1,0 +1,10 @@
+This is a test template!
+
+It describes {{.name}}.
+
+{{.name}} is a:
+{{range $index, $element := .types}}
+	* {{$element}}{{end}}
+
+It is located in the {{.location.borough}} borough of {{.location.region}} in {{.location.country}} on {{.location.planet}}!
+

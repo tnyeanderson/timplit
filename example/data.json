@@ -1,0 +1,10 @@
+{
+	"name": "Big Ben",
+	"location": {
+		"borough": "Westminster",
+		"region": "London",
+		"country": "England",
+		"planet": "Earth"
+	},
+	"types": ["building", "clock", "attraction"]
+}
